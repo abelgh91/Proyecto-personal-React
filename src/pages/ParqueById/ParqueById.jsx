@@ -1,4 +1,4 @@
-import "./ById.css"
+import "./ParqueById.css"
 
 export const ParqueById = () => {
   return (
