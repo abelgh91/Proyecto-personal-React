@@ -9,7 +9,7 @@ const APIHeaders = {
   };
   
   export const APIUser = axios.create({
-    baseURL: `http://localhost:8080/api/v1`, //! cambiar URL a localhost 8080/api/v1
+    baseURL: `http://localhost:8080/api/v1`,
     headers: APIHeaders,
     timeout: 600000,
   });
