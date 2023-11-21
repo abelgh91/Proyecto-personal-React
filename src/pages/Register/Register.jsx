@@ -31,7 +31,6 @@ export const Register = () => {
   // 3) Funcion que gestiona los datos del formulario (la que decide el handle)
 
   const formSubmit = async (formData) => {
-    // esta funcion llama al servicio
     const inputFile = document.getElementById("file-upload").files;
 
     if (inputFile.length != 0) {
@@ -67,7 +66,7 @@ export const Register = () => {
     console.log("estoy registrado");
     // lo llevamos al checkCode confirmation
   }
-  //la linea 54 es el handleSubmit diciendo que funcion gestiona los datos (el formSubmit del paso 3)
+
   return (
     <>
       <div className="form-wrap">
@@ -144,7 +143,7 @@ export const Register = () => {
               className="btn"
               type="submit"
               disabled={send}
-              style={{ background: send ? "#49c1a388" : "#2f7a67" }}
+              style={{ background: send ? "#2b440d" : "#456d17" }}
             >
               Register
             </button>
