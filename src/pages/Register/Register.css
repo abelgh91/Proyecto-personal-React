@@ -2,7 +2,7 @@
 
 * {
   box-sizing: border-box;
-  margin: 0 auto;
+  margin: 0;
   padding: 0;
 }
 
@@ -13,18 +13,21 @@ body {
   line-height: 1.8;
 }
 
+.parrafoLogin {
+  margin-bottom: 40px;
+}
+
+#imagen {
+  display: block;
+}
+
 a {
   text-decoration: none;
 }
 
-#container {
-  margin: 30px auto;
-  max-width: 400px;
-  padding: 20px;
-}
-
 .form-wrap {
-  background: #fff;
+  margin-top: 2rem;
+  background: #f7fffa;
   padding: 15px 25px 30px;
   color: #333;
   border-radius: 5px;
@@ -40,7 +43,7 @@ a {
 }
 
 .form-wrap .form-group label {
-  color: #aaa;
+  color: #2f7a67;
   font-weight: normal;
 }
 
@@ -51,7 +54,8 @@ a {
   border-radius: 5px;
   font-family: inherit;
   font-size: inherit;
-  caret-color: #49c1a2;
+  caret-color: #2f7a67;
+  border: solid 2px #49c1a371;
 }
 
 .form-wrap .form-group input:focus {
@@ -62,10 +66,10 @@ a {
   width: 100%;
   padding: 10px;
   margin-top: 25px;
-  background: #49c1a2;
+  background: #2f7a67;
   color: #fff;
   cursor: pointer;
-  border: #49c1a2 1px solid;
+  border: #2f7a67 1px solid;
   border-radius: 5px;
   font-family: inherit;
   font-size: inherit;
@@ -89,7 +93,7 @@ a {
   text-decoration: underline;
 }
 
-footer {
+.parrafoLogin {
   text-align: center;
   margin-top: 15px;
 }
@@ -104,4 +108,46 @@ footer a:hover {
 
 .btn:disabled {
   background-color: navajowhite;
+}
+
+input[type="radio"] {
+  display: none;
+}
+
+.sexo {
+  display: flex;
+  flex-wrap: no-wrap;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+
+.sexo .hombre {
+  border-radius: 3px 0 0 3px;
+  color: black !important;
+}
+.sexo .mujer {
+  border-radius: 0 3px 3px 0;
+  color: black !important;
+}
+
+.label-radio {
+  background: #37a08e57;
+  color: #fff;
+  padding: 10px;
+  text-align: center;
+  width: 49.5%;
+}
+
+input[type="radio"]:checked + .label-radio {
+  background: #2f7a67;
+  color: #fff !important;
+}
+
+a {
+  color: #49c1a2;
+}
+
+.anchorCustom {
+  color: #276052;
 }

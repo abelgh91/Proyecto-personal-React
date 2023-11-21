@@ -3,6 +3,10 @@ import "./Register.css";
 import { useForm } from "react-hook-form";
 import { registerUser } from "../../services/user.service";
 import { useErrorRegister } from "../../hooks/useErrorRegister";
+import { Uploadfile } from "../../components";
+import { Link, Navigate } from "react-router-dom";
+import { useAuth } from "../../contexts/authContext";
+
 
 export const Register = () => {
   /*
@@ -11,6 +15,7 @@ export const Register = () => {
         2- Estado que gestionamos cuando los botones se deshabilitan (la respuesta esta cargando)
         3- Estado que comprueba el ok o no ok de la funcionalidad de la pagina (estado de navegacion)
     */
+  const { allUser, setAllUser, bridgeData } = useAuth();
   const [res, setRes] = useState({});
   const [send, setSend] = useState(false); //cuando yo envio la peticion pero aun no la he recibido (send a true y se deshabilita el boton)
   const [ok, setOk] = useState(false); // res 200 el ok a true
@@ -27,16 +32,25 @@ export const Register = () => {
 
   const formSubmit = async (formData) => {
     // esta funcion llama al servicio
-    console.log(formData);
+    const inputFile = document.getElementById("file-upload").files;
 
-    const customFormData = {
-      // como es required lo añadimos aqui
-      ...formData,
-      gender: "hombre",
-    };
-    setSend(true);
-    setRes(await registerUser(customFormData));
-    setSend(false);
+    if (inputFile.length != 0) {
+      const custonFormData = {
+        ...formData,
+        image: inputFile[0],
+      };
+
+      setSend(true);
+      setRes(await registerUser(custonFormData));
+      setSend(false);
+    } else {
+      const custonFormData = {
+        ...formData,
+      };
+      setSend(true);
+      setRes(await registerUser(custonFormData));
+      setSend(false);
+    }
   };
 
   // 4) useEffect que gestiona las respuesta y llaman al customhook que gestiona los errores
@@ -86,6 +100,7 @@ export const Register = () => {
               password
             </label>
           </div>
+
           <div className="email_container form-group">
             <input
               className="input_user"
@@ -98,33 +113,51 @@ export const Register = () => {
             <label htmlFor="custom-input" className="custom-placeholder">
               email
             </label>
+
+            <div className="sexo">
+              <input
+                type="radio"
+                name="sexo"
+                id="hombre"
+                value="hombre"
+                {...register("gender")}
+              />
+              <label htmlFor="hombre" className="label-radio hombre">
+                Hombre
+              </label>
+              <input
+                type="radio"
+                name="sexo"
+                id="mujer"
+                value="mujer"
+                {...register("gender")}
+              />
+              <label htmlFor="mujer" className="label-radio mujer">
+                Mujer
+              </label>
+            </div>
+            <Uploadfile />
           </div>
 
           <div className="btn_container">
-            {console.log(send)}
             <button
               className="btn"
               type="submit"
               disabled={send}
-              style={{ background: send ? "#49c1a388" : "#49c1a2" }}
+              style={{ background: send ? "#49c1a388" : "#2f7a67" }}
             >
-              {send ? "Cargando ...." : "Register"}
+              Register
             </button>
           </div>
           <p className="bottom-text">
             <small>
               By clicking the Sign Up button, you agree to our{" "}
-              <a href="#">Terms & Conditions</a> and{" "}
-              <a href="#">Privacy Policy</a>.
+              <Link className="anchorCustom">Terms & Conditions</Link> and{" "}
+              <Link className="anchorCustom">Privacy Policy</Link>.
             </small>
           </p>
         </form>
       </div>
-      <footer>
-        <p>
-          Already have an account? <a href="#">Login Here</a>
-        </p>
-      </footer>
     </>
   );
-};
+  };

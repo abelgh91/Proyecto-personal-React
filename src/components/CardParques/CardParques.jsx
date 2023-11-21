@@ -1,4 +1,4 @@
-import "./CardParque.css";
+import "./CardParques.css";
 import { Link } from "react-router-dom";
 
 export const CardParques = ({ src, name, id }) => {

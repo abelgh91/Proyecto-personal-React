@@ -10,5 +10,4 @@ export * from "./CheckCode/CheckCode";
 export * from "./AveById/AveById";
 export * from "./Dashboard/Dashboard";
 export * from "./ForgotPassword/ForgotPassword";
-export * from "./Main/Main";
 export * from "./Profile/Profile";
