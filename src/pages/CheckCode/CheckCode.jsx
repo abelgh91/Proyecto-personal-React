@@ -1,7 +1,5 @@
-import "./CheckCode.css"
+import "./CheckCode.css";
 
 export const CheckCode = () => {
-  return (
-    <div>CheckCode</div>
-  )
-}
+  return <div>CheckCode</div>;
+};

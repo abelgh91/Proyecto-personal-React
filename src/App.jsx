@@ -1,11 +1,10 @@
-import './App.css'
-import { Register } from './pages/Register/Register';
+import "./App.css";
+import { Register } from "./pages/Register/Register";
 
-export const  App=()=> {
-
+export const App = () => {
   return (
     <>
-    <Register/>
+      <Register />
     </>
-  )
+  );
 };

@@ -1,1 +1,1 @@
-import "./Nav.css"
+import "./Nav.css";

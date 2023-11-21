@@ -1,7 +1,5 @@
-import "./Parques.css"
+import "./Parques.css";
 
 export const Parques = () => {
-  return (
-    <div>Parques</div>
-  )
-}
+  return <div>Parques</div>;
+};

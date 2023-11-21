@@ -1,7 +1,5 @@
-import "./AveById.css"
+import "./AveById.css";
 
 export const AveById = () => {
-  return (
-    <div>AveById</div>
-  )
-}
+  return <div>AveById</div>;
+};

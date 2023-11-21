@@ -1,1 +1,1 @@
-export * from "./useErrorRegister"
+export * from "./useErrorRegister";

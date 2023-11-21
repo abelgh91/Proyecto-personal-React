@@ -1,7 +1,5 @@
-import './Home.css'
+import "./Home.css";
 
 export const Home = () => {
-  return (
-    <div>Home</div>
-  )
-}
+  return <div>Home</div>;
+};

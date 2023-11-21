@@ -1,7 +1,5 @@
-import "./ParqueById.css"
+import "./ParqueById.css";
 
 export const ParqueById = () => {
-  return (
-    <div>ById</div>
-  )
-}
+  return <div>ById</div>;
+};

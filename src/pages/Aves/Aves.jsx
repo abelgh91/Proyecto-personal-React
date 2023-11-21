@@ -1,7 +1,5 @@
-import "./Aves.css"
+import "./Aves.css";
 
 export const Aves = () => {
-  return (
-    <div>Aves</div>
-  )
-}
+  return <div>Aves</div>;
+};

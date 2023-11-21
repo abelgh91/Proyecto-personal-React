@@ -1,6 +1,6 @@
 export * from "./Header/Header";
 export * from "./Nav/Nav";
-export * from "./Main/Main";
+export * from "./Uploadfile/Uploadfile";
 export * from "./Footer/Footer";
 export * from "./Title/Title";
 export * from "./CardParqueById/CardParqueById";
