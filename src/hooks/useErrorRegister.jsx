@@ -43,8 +43,8 @@ export const useErrorRegister = (res, setOk, setRes) => {
 
   // cuando el userName ya existe
   if (
-    res?.response?.data?.error.includes(
-      "E11000 duplicate key error collection: userProyect.users",
+    res?.response?.data?.includes(
+      "E11000 duplicate key error collection: ProyectoNode.users index: name_1 dup key: { name"
     )
   ) {
     Swal.fire({
@@ -53,6 +53,21 @@ export const useErrorRegister = (res, setOk, setRes) => {
       text: "Sorry choose another name ❎",
       showConfirmButton: false,
       timer: 1500,
+    });
+    setRes({});
+  }
+
+  // 404: error, resend code
+  if (
+    res?.response?.status == 404 &&
+    res?.response?.data?.confirmationCode?.includes("error, resend code")
+  ) {
+    Swal.fire({
+      icon: "error",
+      title: "Oops...",
+      text: "Register ok, error to resend code ❎",
+      showConfirmButton: false,
+      timer: 3000,
     });
     setRes({});
   }

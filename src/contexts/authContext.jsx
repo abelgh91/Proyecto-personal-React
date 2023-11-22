@@ -55,7 +55,7 @@ export const AuthContextProvide = ({children}) => {
         setAllUser,
         bridgeData,
     }),
-    [user]); // cada vez que se modifique el user se ejecuta la funcion value
+    [user, allUser]); // cada vez que se modifique el user o el allUser (que es unc uando me he registrado pero no logado) se ejecuta la funcion value
 
     return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>
 };

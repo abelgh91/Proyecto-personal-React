@@ -7,3 +7,5 @@ export * from "./CardParqueById/CardParqueById";
 export * from "./CardParques/CardParques";
 export * from "./CardAves/CardAves";
 export * from "./CardAveById/CardAveById";
+export * from "./ProtectedRoutes/Protected";
+export * from "./ProtectedRoutes/ProtectedCheckChildren";

@@ -31,23 +31,23 @@ export const Register = () => {
   // 3) Funcion que gestiona los datos del formulario (la que decide el handle)
 
   const formSubmit = async (formData) => {
-    const inputFile = document.getElementById("file-upload").files;
+    const inputFile = document.getElementById("file-upload").files; //apuntamos al file para ver si tenemos img
 
     if (inputFile.length != 0) {
-      const custonFormData = {
+      const customFormData = {
         ...formData,
         image: inputFile[0],
       };
 
       setSend(true);
-      setRes(await registerUser(custonFormData));
+      setRes(await registerUser(customFormData));
       setSend(false);
     } else {
-      const custonFormData = {
+      const customFormData = {
         ...formData,
       };
       setSend(true);
-      setRes(await registerUser(custonFormData));
+      setRes(await registerUser(customFormData));
       setSend(false);
     }
   };
@@ -58,12 +58,13 @@ export const Register = () => {
     console.log(res);
     // llamamos a un customHook para gestionar posibles errores de la respuesta
     useErrorRegister(res, setOk, setRes);
+    if(res?.status === 200) bridgeData("ALLUSER") // si todo es ok llamamos a la funcion puente
   }, [res]);
 
   // 5) Gestion de los estados de navegacion (ok o no ok)
 
   if (ok) {
-    console.log("estoy registrado");
+    return <Navigate to="/checkcode"/>
     // lo llevamos al checkCode confirmation
   }
 
@@ -72,7 +73,7 @@ export const Register = () => {
       <div className="form-wrap">
         <h1>Sign Up</h1>
         <p>It’s free and only takes a minute.</p>
-        <form onSubmit={handleSubmit(formSubmit)}>
+        <form onSubmit={handleSubmit(formSubmit)}> 
           <div className="user_container form-group">
             <input
               className="input_user"

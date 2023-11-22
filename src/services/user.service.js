@@ -16,7 +16,7 @@ export const registerUser = async (formData) => {
 //CHECK CODE
 
 export const checkCodeConfirmationUser = async (formData) => {
-  return APIuser.post("/users/check", formData)
+  return APIUser.post("/users/check", formData)
     .then((res) => res)
     .catch((error) => error);
 };
@@ -24,7 +24,7 @@ export const checkCodeConfirmationUser = async (formData) => {
 // RESEND CODE
 
 export const resendCodeConfirmationUser = async (formData) => {
-  return APIuser.post("/users/resend", formData)
+  return APIUser.post("/users/resend", formData)
     .then((res) => res)
     .catch((error) => error);
 };
@@ -32,7 +32,7 @@ export const resendCodeConfirmationUser = async (formData) => {
 //AUTOLOGIN
 
 export const autologinUser = async (formData) => {
-  return APIuser.post("/users/login/autologin", formData)
+  return APIUser.post("/users/login/autologin", formData)
     .then((res) => res)
     .catch((error) => error);
 };
@@ -40,7 +40,7 @@ export const autologinUser = async (formData) => {
 //LOGIN 
 
 export const loginUserService = async (formData) => {
-  return APIuser.post("/users/login", formData)
+  return APIUser.post("/users/login", formData)
     .then((res) => res)
     .catch((error) => error);
 };
@@ -48,7 +48,7 @@ export const loginUserService = async (formData) => {
 //CAMBIO CONTRASEÑA SIN TOKEN
 
 export const forgotPasswordUser = async (formData) => {
-  return APIuser.patch("/users/forgotpassword/forgotpassword", formData)
+  return APIUser.patch("/users/forgotpassword/forgotpassword", formData)
     .then((res) => res)
     .catch((error) => error);
 };
@@ -56,7 +56,7 @@ export const forgotPasswordUser = async (formData) => {
 //DELETE USER
 
 export const deleteUserService = async () => {
-  return APIuser.delete("/users/deleteuser/", { // YO TENIA ESTA RUTA users/deleteuser/:id
+  return APIUser.delete("/users/deleteuser/", { // YO TENIA ESTA RUTA users/deleteuser/:id
     headers: {
       Authorization: `Bearer ${updateToken()}`,
     },
@@ -67,7 +67,7 @@ export const deleteUserService = async () => {
 
 //CAMBIO CONTRASEÑA CUANDO ESTAS LOGADO
 export const changePasswordUserToken = async (formData) => {
-  return APIuser.patch("/users/changepassword", formData, {
+  return APIUser.patch("/users/changepassword", formData, {
     headers: {
       Authorization: `Bearer ${updateToken()}`,
     },
@@ -79,7 +79,7 @@ export const changePasswordUserToken = async (formData) => {
 // UPDATE USER 
 
 export const updateUser = async (formData) => {
-  return APIuser.patch("/users/update/", formData, { // yo la tenia users/update/:id
+  return APIUser.patch("/users/update/", formData, { // yo la tenia users/update/:id
     headers: {
       "Content-Type": "multipart/form-data",
       Authorization: `Bearer ${updateToken()}`,

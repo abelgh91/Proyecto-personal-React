@@ -15,6 +15,7 @@ import {
   ForgotPassword,
   Profile,
 } from "../pages";
+import { Protected, ProtectedCheckChildren } from "../components";
 
 export const router = createBrowserRouter([
   {
@@ -35,11 +36,17 @@ export const router = createBrowserRouter([
       },
       {
         path: "/profile",
-        element: <Profile />,
+        element: 
+        (<Protected>
+          <Profile />
+        </Protected>),
       },
       {
         path: "/dashboard",
-        element: <Dashboard />,
+        element: 
+        (<Protected>
+          <Dashboard />
+        </Protected>),
       },
       {
         path: "/forgotPassword",
@@ -47,23 +54,38 @@ export const router = createBrowserRouter([
       },
       {
         path: "/checkcode",
-        element: <CheckCode />,
+        element: 
+        (<ProtectedCheckChildren>
+          <CheckCode />
+        </ProtectedCheckChildren>),
       },
       {
         path: "/parques",
-        element: <Parques />,
+        element: 
+        (<Protected>
+          <Parques />
+        </Protected>),
       },
       {
         path: "/parques/item/:id",
-        element: <ParqueById />,
+        element: 
+        (<Protected>
+          <ParqueById />
+        </Protected>),
       },
       {
         path: "/aves",
-        element: <Aves />,
+        element: 
+        (<Protected>
+          <Aves />
+        </Protected>),
       },
       {
         path: "/aves/item/:id",
-        element: <AveById />,
+        element:
+        (<Protected>
+          <AveById />
+        </Protected>),
       },
       {
         path: "*",
@@ -71,7 +93,10 @@ export const router = createBrowserRouter([
       },
       {
         path: "/about",
-        element: <About />,
+        element: 
+        (<Protected>
+          <About />
+        </Protected>),
       },
     ],
   },
