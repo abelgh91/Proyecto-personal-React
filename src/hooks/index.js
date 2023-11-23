@@ -4,3 +4,6 @@ export * from "./useCheckCodeError";
 export * from "./useAutoLogin";
 export * from "./useResendCodeError";
 export * from "./useForgotPasswordError";
+export * from "./useChangePasswordError";
+export * from "./useUpdateError";
+export * from "./useDeleteUser";

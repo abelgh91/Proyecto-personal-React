@@ -56,7 +56,7 @@ export const forgotPasswordUser = async (formData) => {
 //DELETE USER
 
 export const deleteUserService = async () => {
-  return APIUser.delete("/users/deleteuser/", { // YO TENIA ESTA RUTA users/deleteuser/:id
+  return APIUser.delete("/users/deleteuser/", { // YO TENIA ESTA RUTA users/deleteuser/
     headers: {
       Authorization: `Bearer ${updateToken()}`,
     },

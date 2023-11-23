@@ -7,6 +7,7 @@ export const AuthContextProvide = ({children}) => {
         const user = localStorage.getItem("user");
         return user ? JSON.parse(user) : null;
     });
+    const [deleteUser, setDeleteUser] = useState(false);
 
     const [allUser, setAllUser] = useState({
         data: {
@@ -54,8 +55,10 @@ export const AuthContextProvide = ({children}) => {
         allUser,
         setAllUser,
         bridgeData,
+        deleteUser, 
+        setDeleteUser,
     }),
-    [user, allUser]); // cada vez que se modifique el user o el allUser (que es unc uando me he registrado pero no logado) se ejecuta la funcion value
+    [user, allUser, deleteUser]); // cada vez que se modifique el user o el allUser o el deleteUser (que es unc uando me he registrado pero no logado) se ejecuta la funcion value
 
     return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>
 };

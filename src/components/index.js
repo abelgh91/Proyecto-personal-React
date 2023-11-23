@@ -9,3 +9,5 @@ export * from "./CardAves/CardAves";
 export * from "./CardAveById/CardAveById";
 export * from "./ProtectedRoutes/Protected";
 export * from "./ProtectedRoutes/ProtectedCheckChildren";
+export * from "./FigureUser/FigureUser";
+export * from "./NavProfile/NavProfile";

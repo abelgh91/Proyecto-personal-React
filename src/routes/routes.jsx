@@ -14,6 +14,8 @@ import {
   Dashboard,
   ForgotPassword,
   Profile,
+  FormProfile,
+  ChangePassword,
 } from "../pages";
 import { Protected, ProtectedCheckChildren } from "../components";
 
@@ -35,13 +37,6 @@ export const router = createBrowserRouter([
         element: <Login />,
       },
       {
-        path: "/profile",
-        element: 
-        (<Protected>
-          <Profile />
-        </Protected>),
-      },
-      {
         path: "/dashboard",
         element: 
         (<Protected>
@@ -58,6 +53,31 @@ export const router = createBrowserRouter([
         (<ProtectedCheckChildren>
           <CheckCode />
         </ProtectedCheckChildren>),
+      },
+      {
+        path: "/profile",
+        element: 
+        (<Protected>
+          <Profile />
+        </Protected>),
+        children: [
+          {
+            path: "/profile/changepassword",
+            element: (
+              <Protected>
+                <ChangePassword/>
+              </Protected>
+            )
+          },
+          {
+            path: "/profile/",
+            element: (
+              <Protected>
+                <FormProfile/>
+              </Protected>
+            )
+          }
+        ]
       },
       {
         path: "/parques",

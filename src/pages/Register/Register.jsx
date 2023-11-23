@@ -16,7 +16,7 @@ export const Register = () => {
         2- Estado que gestionamos cuando los botones se deshabilitan (la respuesta esta cargando)
         3- Estado que comprueba el ok o no ok de la funcionalidad de la pagina (estado de navegacion)
     */
-  const { allUser, setAllUser, bridgeData } = useAuth();
+  const { allUser, setAllUser, bridgeData, setDeleteUser } = useAuth();
   const [res, setRes] = useState({});
   const [send, setSend] = useState(false); //cuando yo envio la peticion pero aun no la he recibido (send a true y se deshabilita el boton)
   const [ok, setOk] = useState(false); // res 200 el ok a true
@@ -62,6 +62,14 @@ export const Register = () => {
     if(res?.status === 200) bridgeData("ALLUSER") // si todo es ok llamamos a la funcion puente
   }, [res]);
 
+  useEffect(() => {
+    console.log("entro al allUser", allUser)
+  }, [allUser]);
+
+  useEffect(() => {
+    setDeleteUser(() => false);
+  }, [])
+  
   // 5) Gestion de los estados de navegacion (ok o no ok)
 
   if (ok) {

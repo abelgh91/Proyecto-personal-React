@@ -11,3 +11,5 @@ export * from "./AveById/AveById";
 export * from "./Dashboard/Dashboard";
 export * from "./ForgotPassword/ForgotPassword";
 export * from "./Profile/Profile";
+export * from "./FormProfile/FormProfile";
+export * from "./ChangePassword/ChangePassword";
