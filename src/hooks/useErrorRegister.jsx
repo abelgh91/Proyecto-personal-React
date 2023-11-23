@@ -4,6 +4,8 @@ export const useErrorRegister = (res, setOk, setRes) => {
   // 200 ok
   if (res?.status == 200) {
     // optional chaining es fundamental
+    const dataToString = JSON.stringify(res);
+    localStorage.setItem("data", dataToString);
     setOk(() => true);
     Swal.fire({
       icon: "success",

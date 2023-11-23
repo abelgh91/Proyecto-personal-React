@@ -1,7 +1,7 @@
 import { updateToken } from "../utils";
 import { APIUser } from "./service.config";
 
-//! esto es lo que utiliza la pagina a lahora de traerse los datos
+//? esto es lo que utiliza la pagina a la hora de traerse los datos
 
 //REGISTER
 export const registerUser = async (formData) => {

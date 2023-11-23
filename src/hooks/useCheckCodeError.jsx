@@ -4,9 +4,9 @@ export const useCheckCodeError = (
     res,
     setRes,
     setOkCheck,
-    setOkDeleteUser,
     userlogin,
-    setUserNotFound
+    // setOkDeleteUser,
+    // setUserNotFound
   ) => {
     // 500
     if (res?.response?.status == 500) {
@@ -22,7 +22,7 @@ export const useCheckCodeError = (
   
     // 200 test todo correcto
   
-    if (res?.data?.testCheckOk?.toString() == "true") {
+    if (res?.data?.testCheckUser?.toString() == "true") {
       // si viene del login modificamos el estado de user del contexto para poner el check en true
       if (localStorage.getItem("user")) {
         const currentUser = localStorage.getItem("user");
@@ -37,7 +37,7 @@ export const useCheckCodeError = (
         userlogin(stringUser);
       }
       
-      setOkCheck(() => true);
+      setOkCheck(() => true); //tiene q ser igual q la propiedad del backend
       setRes(() => ({}));
       Swal.fire({
         icon: "success",
@@ -46,12 +46,10 @@ export const useCheckCodeError = (
         timer: 1500,
       });
     }
-  
-    // PENDIENTE DE EXPLICAR ESTOS ERRRORES
 
     // -------------- 200 test = false
   
-    if (res?.data?.testCheckOk?.toString() == "false") {
+    if (res?.data?.testCheckUser?.toString() == "false") {
       // el codigo si era correcto pero el actualizar en el back el check no se ha producido correctamente
       setRes(() => ({}));
       Swal.fire({

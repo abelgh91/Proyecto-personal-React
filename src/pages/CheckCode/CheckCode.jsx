@@ -2,10 +2,10 @@ import "./CheckCode.css";
 import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { Navigate, useNavigate } from "react-router-dom";
-import { checkCodeConfirmationUser } from "../../services/user.service";
+import { checkCodeConfirmationUser, resendCodeConfirmationUser } from "../../services/user.service";
 import { useAuth } from "../../contexts/authContext";
-import { useCheckCodeError } from "../../hooks/useCheckCodeError";
-import { useAutoLogin } from "../../hooks/useAutoLogin";
+import { useAutoLogin, useCheckCodeError, useResendCodeError } from "../../hooks";
+
 
 export const CheckCode = () => {
   const navigate = useNavigate();
@@ -49,7 +49,27 @@ export const CheckCode = () => {
     }
   };
 
-  const handleReSend = async () => {}; // esta funcion esta adherida al boton de resend code
+  const handleReSend = async () => { // esta funcion esta adherida al boton de resend code
+    const userLocal = localStorage.getItem("user");
+    if (userLocal != null) {
+      const parseUser = JSON.parse(userLocal);
+      const customFormData = {
+        email: parseUser.email,
+      };
+
+      setSend(true);
+      setResResend(await resendCodeConfirmationUser(customFormData));
+      setSend(false);
+    } else {
+      const customFormData = {
+        email: allUser?.data?.user?.email,
+      };
+
+      setSend(true);
+      setResResend(await resendCodeConfirmationUser(customFormData));
+      setSend(false);
+    }
+  }; 
 
   // USE EFFECT QUE NOS SIRVE PARA CUANDO CAMBIA RES, LANZAR EL COMPROBADOR DE ERRORES
   useEffect(() => {
@@ -58,14 +78,16 @@ export const CheckCode = () => {
       res,
       setRes,
       setOkCheck,
-      setOkDeleteUser,
       login,
-      setUserNotFound
     );
   }, [res]);
 
   useEffect(() => {
     console.log("😃", resResend);
+    useResendCodeError(
+      resResend,
+      setResResend,
+      setUserNotFound)
   }, [resResend]);
 
   // PONEMOS LOS CONDICIONALES QUE EVALUAN SI ESTAN A TRUE LOS ESTADOS DE NAVEGACION (deleUser, okCheck)
@@ -79,6 +101,17 @@ export const CheckCode = () => {
       return <Navigate to="/dashboard" />;
     }
   }
+
+  if (okDeleteUser) {
+    // si mete mal el codigo lo mandamos al register
+    return <Navigate to="/register"/>;
+  }
+
+  if(userNotFound) {
+    //ha recargado la pag y se resetea el alluser, por tanto no tengo email para poder verificarlo y lo mando al login
+    return <Navigate to="/login"/>
+  }
+  
   return (
     <>
       <div className="form-wrap">

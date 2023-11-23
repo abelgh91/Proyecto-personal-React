@@ -8,6 +8,7 @@ import { Link, Navigate } from "react-router-dom";
 import { useAuth } from "../../contexts/authContext";
 
 
+
 export const Register = () => {
   /*
     1) Estados: 
