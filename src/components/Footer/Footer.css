@@ -6,3 +6,9 @@ footer {
     align-items: center;
     justify-content: center;
   }
+  .linkAbout{
+    color: aliceblue;
+  }
+  .linkAbout:hover{
+    color: #c4e49f;
+  }

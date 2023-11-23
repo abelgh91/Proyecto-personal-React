@@ -1,0 +1,25 @@
+.titleHome{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 3px;
+}
+
+.firstParagraph{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 40px 0 5px 0;
+    max-width: 800px;
+}
+
+.secondParagraph{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 40px;
+    max-width: 800px;
+}

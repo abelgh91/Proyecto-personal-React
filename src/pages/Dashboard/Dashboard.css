@@ -1,0 +1,21 @@
+.avePhotoDashboard{
+    max-width: 500px;
+    max-height: 500px;
+    border-radius: 50%;
+}
+
+.parquePhotoDashboard{
+    max-width: 500px;
+    max-height: 500px;
+    border-radius: 50%;
+}
+.pictures{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap:200px;
+}
+.titlePicture{
+    text-align: center;
+    margin-top: 10px;
+}
