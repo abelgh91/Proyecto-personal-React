@@ -4,7 +4,6 @@ import "./CardAveById.css";
 export const CardAveById = ({
   src,
   especie,
-  description,
   type,
   likes,
   visto,
@@ -15,12 +14,12 @@ export const CardAveById = ({
   CCAA,
   provincia,
 }) => {
-  const navigate = useNavigate();
+ 
   return (
+    <>
     <figure id="figureAveId">
       <img src={src} alt={especie} />
       <h3>{especie}</h3>
-      <p>{description}</p>
       <p>{CCAA}</p>
       <p>{provincia}</p>
       <p>{type}</p>
@@ -30,9 +29,8 @@ export const CardAveById = ({
       <p>{gender}</p>
       <p>{age}</p>
       <p>{peligro}</p>
-      <button className="btnReturnAves" onClick={() => navigate("/aves")}>
-        VOLVER A PARQUES
-      </button>
     </figure>
+    </>
   );
 };
+
