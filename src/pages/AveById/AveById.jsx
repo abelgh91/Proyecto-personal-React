@@ -7,7 +7,7 @@ import { useNavigate, useParams } from "react-router-dom";
 
 export const AveById = () => {
   //estado para guardar los datos
-  const [aveData, setAveData] = useState(null);
+  const [aveData, setAveData] = useState([]);
 
   const { id } = useParams()
   const navigate = useNavigate();
@@ -19,7 +19,6 @@ export const AveById = () => {
       try {
         // Llamar a la función que obtiene datos de MongoDB
         const data = await getById(id);
-        console.log("get by idddddddddddddddddd", getById)
         setAveData(data);
       } catch (error) {
         console.error("Error fetching data:", error);
@@ -33,23 +32,22 @@ export const AveById = () => {
     <div id="container-ave">
       {Object.keys(aveData).length > 0 ? (
         <>
-          {Object.keys(aveData).map((key) => (
             <CardAveById
-              key={aveData[key]._id}
-              src={aveData[key].image}
-              especie={aveData[key].especie}
-              type={aveData[key].types}
-              likes={aveData[key].likes}
-              visto={aveData[key].visto}
-              gender={aveData[key].gender}
-              age={aveData[key].age}
-              peligro={aveData[key].peligro}
-              parque={aveData[key].parque}
-              CCAA={aveData[key].CCAA}
-              provincia={aveData[key].provincia}
+              key={aveData._id}
+              src={aveData.image}
+              especie={aveData.especie}
+              type={aveData.types}
+              likes={aveData.likes}
+              visto={aveData.visto}
+              gender={aveData.gender}
+              age={aveData.age}
+              peligro={aveData.peligro}
+              parque={aveData.parque}
+              CCAA={aveData.CCAA}
+              provincia={aveData.provincia}
               
             />
-          ))}
+          
           <button className="btnReturnAves" onClick={() => navigate("/aves")}>
         VOLVER A GALERIA
       </button>
