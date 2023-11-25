@@ -7,6 +7,13 @@ export const NavProfile = () => {
     const {setUser, setDeleteUser} = useAuth();
   return (
     <div className="containerNavProfile">
+      <Link to="/profile/likes">
+        <img
+          src="https://res.cloudinary.com/dqlvldxwc/image/upload/v1700904218/red-heart-icon-on-white-background-love-logo-heart-illustration-free-vector_gc07dp.jpg"
+          alt="go to Likes"
+          className="iconNav iconLikes"
+        />
+      </Link>
       <Link to="/profile/changepassword">
         <img
           src="https://res.cloudinary.com/dq186ej4c/image/upload/v1686125399/pngwing.com_npd5sa.png"

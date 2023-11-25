@@ -13,3 +13,4 @@ export * from "./ForgotPassword/ForgotPassword";
 export * from "./Profile/Profile";
 export * from "./FormProfile/FormProfile";
 export * from "./ChangePassword/ChangePassword";
+export * from "./Likes/Likes";

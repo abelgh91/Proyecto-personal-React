@@ -52,10 +52,15 @@ export const deleteAvesService = async () => {
   // GET BY ID 
 
   export const getById = async (id) => {
-    return API.get(`/aves/${ id }`, {
+    const url = `/aves/${ id }`;
+    console.log("url de getbyid", url)
+
+    return API.get(`/aves/${ id }`,{
       // le damos la ruta, el objeto que le enviamos como body y las modificaciones de los headers
       headers: { "Content-Type": "multipart/form-data" },
     })
       .then((res) => res) // devolvemos la respuesta completa
       .catch((error) => error); // capturamos errores si los hay
   };
+
+  

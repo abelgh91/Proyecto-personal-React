@@ -7,10 +7,10 @@ import { useNavigate, useParams } from "react-router-dom";
 
 export const AveById = () => {
   //estado para guardar los datos
-  const [aveData, setAveData] = useState([]);
+  const [aveData, setAveData] = useState(null);
 
   const { id } = useParams()
-
+  const navigate = useNavigate();
   //useEffect para llamar a la API
 
   useEffect(() => {
@@ -19,6 +19,7 @@ export const AveById = () => {
       try {
         // Llamar a la función que obtiene datos de MongoDB
         const data = await getById(id);
+        console.log("get by idddddddddddddddddd", getById)
         setAveData(data);
       } catch (error) {
         console.error("Error fetching data:", error);
@@ -26,7 +27,7 @@ export const AveById = () => {
     };
     fetchDataById(); // Llamar a la función al montar el componente
   }, [id]);
-  const navigate = useNavigate();
+  
 
   return (
     <div id="container-ave">

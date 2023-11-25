@@ -7,8 +7,6 @@ import Swal from "sweetalert2/dist/sweetalert2.all";
 import { updateUser } from "../../services/user.service";
 import { useUpdateError } from "../../hooks";
 
-//?importar useupdateerror de las hooks
-
 
 export const FormProfile = () => {
     const { user, setUser, logout } = useAuth();

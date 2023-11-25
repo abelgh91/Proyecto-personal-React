@@ -16,6 +16,7 @@ import {
   Profile,
   FormProfile,
   ChangePassword,
+  Likes,
 } from "../pages";
 import { Protected, ProtectedCheckChildren } from "../components";
 
@@ -66,6 +67,14 @@ export const router = createBrowserRouter([
             element: (
               <Protected>
                 <ChangePassword/>
+              </Protected>
+            )
+          },
+          {
+            path: "/profile/likes",
+            element: (
+              <Protected>
+                <Likes/>
               </Protected>
             )
           },
