@@ -88,3 +88,27 @@ export const updateUser = async (formData) => {
     .then((res) => res)
     .catch((error) => error);
 };
+//  LIKES
+
+export const addFavAve = async (id) => {
+  return API.patch(`/users/addfavave/${id}`, {
+    headers: {
+      Authorization: `Bearer ${updateToken()}`,
+    },
+  }) 
+  .then((res) => res)
+  .catch((error) => error);
+};
+
+
+//GET LIKES
+
+export const getLikesAves = async () => {
+  return API.get(`/users/verlikesaves/aves`, {
+    headers: {
+      Authorization: `Bearer ${updateToken()}`,
+    },
+  }) 
+  .then((res) => res)
+  .catch((error) => error);
+};

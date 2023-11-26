@@ -4,8 +4,8 @@ import { API } from "./service.config";
 
 //DELETE AVES
 
-export const deleteAvesService = async () => {
-    return API.delete("/aves/deleteave/", { // YO TENIA ESTA RUTA users/deleteuser/
+export const deleteAvesService = async (id) => {
+    return API.delete(`/aves/deleteave/${id}`, { 
       headers: {
         Authorization: `Bearer ${updateToken()}`,
       },
@@ -53,11 +53,9 @@ export const deleteAvesService = async () => {
 
   export const getById = async (id) => {
     const url = `/aves/${ id }`;
-    console.log("url de getbyid", url)
-
     return API.get(`/aves/${ id }`,{
       // le damos la ruta, el objeto que le enviamos como body y las modificaciones de los headers
-      headers: { "Content-Type": "multipart/form-data" },
+      headers: { "Content-Type": "text/plain" },
     })
       .then((res) => res) // devolvemos la respuesta completa
       .catch((error) => error); // capturamos errores si los hay

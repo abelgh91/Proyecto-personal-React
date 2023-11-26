@@ -27,24 +27,23 @@ export const AveById = () => {
     fetchDataById(); // Llamar a la función al montar el componente
   }, [id]);
   
-
   return (
     <div id="container-ave">
       {Object.keys(aveData).length > 0 ? (
         <>
             <CardAveById
-              key={aveData._id}
-              src={aveData.image}
-              especie={aveData.especie}
-              type={aveData.types}
-              likes={aveData.likes}
-              visto={aveData.visto}
-              gender={aveData.gender}
-              age={aveData.age}
-              peligro={aveData.peligro}
-              parque={aveData.parque}
-              CCAA={aveData.CCAA}
-              provincia={aveData.provincia}
+              key={aveData.data._id}
+              src={aveData.data.image}
+              especie={aveData.data.especie}
+              type={aveData.data.types}
+              likes={aveData.data.likes}
+              visto={aveData.data.visto}
+              gender={aveData.data.gender}
+              age={aveData.data.age}
+              peligro={aveData.data.peligro}
+              parque={aveData.data.parque}
+              CCAA={aveData.data.CCAA}
+              provincia={aveData.data.provincia}
               
             />
           

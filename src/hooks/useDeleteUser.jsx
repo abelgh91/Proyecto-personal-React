@@ -10,7 +10,6 @@ export const useDeleteUser = (setUser, setDeleteUser) => {
       cancelButtonColor: "#d33",
       confirmButtonText: "YES",
     }).then(async (result) => {
-      console.log("result", result);
   
       if (result.isConfirmed) {
         const res = await deleteUserService();

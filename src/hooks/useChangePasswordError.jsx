@@ -1,7 +1,6 @@
 import { Swal } from "sweetalert2/dist/sweetalert2.all";
 
 export const useChangePasswordError = (res, setRes, setUser) => {
-    console.log("entro al custom hook 💚");
     //!----------------- 200: updateUser: true,
     if (res?.data?.updateUser?.toString() == "true") {
       setUser(() => null);

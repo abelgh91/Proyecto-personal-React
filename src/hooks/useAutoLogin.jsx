@@ -2,7 +2,6 @@ import { Navigate } from "react-router-dom";
 import { autologinUser } from "../services/user.service";
 
 export const useAutoLogin = async (allUser, userLogin) => {
-  console.log("entroooooooooooo")
     try {
       const { password, email } = allUser?.data?.user; //esto solo se utiliza por el register
       const customFormData = {
@@ -11,7 +10,6 @@ export const useAutoLogin = async (allUser, userLogin) => {
       };
   
       const sendData = await autologinUser(customFormData);
-      console.log("entro a send data", sendData)
   
       if (sendData?.status == 200) {  //le metemos lo mismo y lo convertimos a string. Lo loguea la funcion de login
         const { name, email, image, check } = sendData?.data?.user;

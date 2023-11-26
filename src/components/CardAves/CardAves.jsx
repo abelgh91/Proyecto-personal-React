@@ -1,20 +1,34 @@
 import {  useState } from "react";
-import { getAllAves } from "../../services/aves.service";
+import { deleteAvesService } from "../../services/aves.service";
 import "./CardAves.css";
 import { Link } from "react-router-dom";
 import { DeleteButton } from "../DeleteButton";
+import { addFavAve } from "../../services/user.service";
+import { useAuth } from "../../contexts/authContext";
+import { useEffect } from "react";
 
 
-export const CardAves = ({ src, especie, id }) => {
+export const CardAves = ({ src, especie, id, likes, setDeleteAve }) => {
   const path = `/aves/item/${id}`;
-  const [likes, setLikes] = useState(0);
+  const [isAveLiked, setIsAveLiked] = useState();
+  const {user} = useAuth();
+
+useEffect(() => {
+  if(likes.includes(user._id)) {
+    setIsAveLiked(true)
+  } else {
+    setIsAveLiked(false)
+  }
+}, [])
 
   const handleLike = () => {
-    setLikes(likes + 1);
+    addFavAve(id);
+    setIsAveLiked(true);
   };
 
-  const handleDelete = () => {
-    // agregar la lógica para eliminar la imagen
+  const handleDelete = async() => {
+    await deleteAvesService(id)
+    setDeleteAve(id)
     console.log(`Eliminar imagen con ID ${id}`);
   };
 
@@ -27,8 +41,8 @@ export const CardAves = ({ src, especie, id }) => {
       <h3>{especie}</h3>
       <div className="buttons-container">
           <DeleteButton onClick={handleDelete} />
-          <button onClick={handleLike} className="like-button">
-            Me gusta ({likes})
+          <button onClick={handleLike} className="like-button" disabled={isAveLiked} >
+            {isAveLiked ? "+1" : "me gusta"}
           </button>
         </div>
     </figure>
