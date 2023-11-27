@@ -53,8 +53,8 @@ header {
     width: 70px;
     height: 70px;
     object-fit: cover;
-    border: solid 7px black;
-    border-radius: 50%;
+    /* border: solid 7px black; */
+    border-radius: 10%;
   }
   
   .profileCircle {
@@ -62,7 +62,7 @@ header {
     height: 60px;
     object-fit: cover;
     border-radius: 50%;
-    border: solid black 6px;
+    /* border: solid black 6px; */
   }
   
   a {
@@ -74,7 +74,7 @@ header {
   .iconDashBoard {
     width: 60px;
     height: 60px;
-    border-radius: 50px;
+    /* border-radius: 50px; */
   }
   
   @media (max-width: 700px) {

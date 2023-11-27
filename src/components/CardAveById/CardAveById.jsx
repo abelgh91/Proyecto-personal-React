@@ -18,7 +18,7 @@ export const CardAveById = ({
   return (
     <>
     <figure id="figureAveId">
-      <img src={src} alt={especie} />
+      <img src={src} alt={especie} className="imgById"/>
       <h3>{especie}</h3>
       <p>{CCAA}</p>
       <p>{provincia}</p>

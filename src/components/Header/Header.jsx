@@ -9,7 +9,7 @@ export const Header = () => {
       <header>
         <div className="titleFatherContainer">
           <img
-            src="https://res.cloudinary.com/dqlvldxwc/image/upload/v1698243435/pngtree-character-default-avatar-image_2237203_yzet4n.jpg"
+            src="https://res.cloudinary.com/dqlvldxwc/image/upload/v1701073416/loro_ezswxt.png"
             alt="logo"
             className="logo"
           />
@@ -22,7 +22,7 @@ export const Header = () => {
           {user == null && (
             <NavLink to="/login">
               <img
-                src="https://res.cloudinary.com/dq186ej4c/image/upload/v1685705523/login_ljn9fb.png"
+                src="https://res.cloudinary.com/dqlvldxwc/image/upload/v1701073294/seguridad-del-usuario_povk6q.png"
                 alt=""
                 className="iconNav"
               />
@@ -32,7 +32,7 @@ export const Header = () => {
           {user !== null ? (
             <NavLink to="/dashboard">
               <img
-                src="https://res.cloudinary.com/dq186ej4c/image/upload/v1685705689/dashboard-statistics-5492_rnmxcl.png"
+                src="https://res.cloudinary.com/dqlvldxwc/image/upload/v1701072854/menu-principal_vji15v.png"
                 alt=""
                 className="iconNav iconDashBoard"
               />
@@ -41,7 +41,7 @@ export const Header = () => {
 
           <NavLink to="/">
             <img
-              src="https://res.cloudinary.com/dq186ej4c/image/upload/v1685705455/home_circle_outline_icon_139029_xdnnt2.png"
+              src="https://res.cloudinary.com/dqlvldxwc/image/upload/v1701072955/hogar_m4szgd.png"
               alt=""
               className="iconNav home"
             />
