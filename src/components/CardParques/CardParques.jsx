@@ -27,7 +27,7 @@ export const CardParques = ({ src, name, id }) => {
       <div className="buttons-container">
           <DeleteButton onClick={handleDelete} />
           <button onClick={handleLike} className="like-button">
-            Me gusta ({likes})
+          Like ❤ ({likes})
           </button>
         </div>
     </figure>

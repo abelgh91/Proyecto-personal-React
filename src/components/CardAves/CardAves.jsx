@@ -42,7 +42,7 @@ useEffect(() => {
       <div className="buttons-container">
           <DeleteButton onClick={handleDelete} />
           <button onClick={handleLike} className="like-button" disabled={isAveLiked} >
-            {isAveLiked ? "+1" : "me gusta"}
+            {isAveLiked ? "+1" : "Like ❤"}
           </button>
         </div>
     </figure>
