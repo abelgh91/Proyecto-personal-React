@@ -9,14 +9,14 @@ export const NavProfile = () => {
     <div className="containerNavProfile">
       <Link to="/profile/likes">
         <img
-          src="https://res.cloudinary.com/dqlvldxwc/image/upload/v1700904218/red-heart-icon-on-white-background-love-logo-heart-illustration-free-vector_gc07dp.jpg"
+          src="https://res.cloudinary.com/dqlvldxwc/image/upload/v1701074902/ahorrar_tctk8v.png"
           alt="go to Likes"
           className="iconNav iconLikes"
         />
       </Link>
       <Link to="/profile/changepassword">
         <img
-          src="https://res.cloudinary.com/dq186ej4c/image/upload/v1686125399/pngwing.com_npd5sa.png"
+          src="https://res.cloudinary.com/dqlvldxwc/image/upload/v1701074658/restablecer-la-contrasena_hielu9.png"
           alt="go to ChangePassword"
           className="iconNav"
         />
@@ -24,14 +24,14 @@ export const NavProfile = () => {
 
       <Link to="/profile/">
         <img
-          src="https://res.cloudinary.com/dq186ej4c/image/upload/v1686125391/Change_User_icon-icons.com_55946_lypx2c.png"
+          src="https://res.cloudinary.com/dqlvldxwc/image/upload/v1701074767/actualizar_1_qlf5sv.png"
           alt="go to change data profile"
           className="iconNav iconChangeProfile"
         />
       </Link>
 
       <img
-        src="https://res.cloudinary.com/dq186ej4c/image/upload/v1686140226/eliminar_user_rmwoeg.png"
+        src="https://res.cloudinary.com/dqlvldxwc/image/upload/v1701074177/borrar_pxsixt.png"
         alt="user delete button"
         className="iconNav iconDeleteUser"
         onClick={() => useDeleteUser(setUser, setDeleteUser)}
